@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Pi Phi Euler Matrix</title>
+    <!-- Favicon -->
+    <link href="favicon.png" rel="icon" type="image/png">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!-- Icons -->
+    <link href="css/nucleo.css" rel="stylesheet">
+    <link href="css/all.min.css" rel="stylesheet">
+    <link href="css/extra.style.css?t=8" rel="stylesheet">
+    <!-- Argon CSS -->
+    <link type="text/css" href="css/argon.min.css?t=3" rel="stylesheet">
+</head>
+
+<body style="background: #1a174d">
+<div class="container bg-gradient-purple">
+    <div class="row">
+        <div style="width:100%">
+            <h1 class="titleHeader">Pi-Phi-Euler-Matrix</h1>
+        </div>
+    </div>
+</div>
+<div class="container bg-gradient-purple">
+    <div class="row">
+        <div class="col">
+            <div class="table-responsive card bg-dark pi-table">
+                <table id="positions-form-table" class="pi-table table-dark align-items-center" style="width: 100%">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th class="thead-dark" colspan="3">
+                            Irrational numbers query
+                        </th>
+                        <th>
+                            <button class="btn-dark btn-sm" id="morePositions" value="1">Extend</button>
+                            <label class="custom-toggle">
+                                <input id="linkPositions" type="checkbox" checked>
+                                <span data-toggle="tooltip" title="0" id="linkPositionsLabel" class="custom-toggle-slider rounded-circle" data-value="1" data-checked="0" data-label-off="Link" data-label-on="Link"></span>
+                            </label>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody class="list">
+                    <tr>
+                        <!--    <td colspan="4">
+                                <button class="btn-darker btn--small" id="morePositions" value="1">Extend</button>
+                            </td>-->
+                    </tr>
+                    <tr>
+                        <td>Find in &pi;:&nbsp;</td>
+                        <td>
+                            <input class="normal-input form-control-sm" data-placement="top" title="Search number in the string of &pi;" placeholder="Search &pi;" type="text" id="piInput"/>
+                        </td>
+                        <td>
+                            <span><span class="bold-green" data-totals="" id="pi-location-first"></span> (<span class="bold-green" data-totals="" id="pi-location-summed"></span>)</span>
+                            <span id="pi-result"></span>
+                            <span>
+                        <select data-placement="top" title="Number of occurrence" class="form-control-sm" id="pi-position-index">
+                            <option value="1" selected="selected">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+
+                        </select>
+                    </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&pi; from n: &nbsp;</td>
+                        <td><input class="normal-input form-control-sm" data-placement="top" title="Show &pi; string from position n" placeholder="Show &pi;" type="text" id="piStringLoc"/></td>
+                        <td class="bold-green">
+                            <span id="pistring-loc-result"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Find in &#981;:&nbsp;</td>
+                        <td>
+                            <input class="normal-input form-control-sm" data-placement="top" title="Search nunber in the string of &#981;" placeholder="Search &#981;" type="text" id="phiInput"/>
+                        </td>
+                        <td>
+                            <span><span class="bold-green" data-totals="" id="phi-location-first"></span> (<span class="bold-green" data-totals="" id="phi-location-summed"></span>)</span>
+                            <span id="phi-result"></span>
+                            <span>
+                        <select data-placement="top" title="Number of occurrence" class="form-control-sm" id="phi-position-index">
+                            <option value="1" selected="selected">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&#981; from n: &nbsp;</td>
+                        <td><input class="normal-input form-control-sm" data-placement="top" title="Show &#981; string from position n" placeholder="Show &#981;" type="text" id="phiStringLoc"/></td>
+               <td class="bold-green">
+                            <span id="phistring-loc-result"></span>
+                        </td>
+                    </tr>
+
+
+                    <tr class="hidden">
+                        <td>Find in &#8455;:&nbsp;</td>
+                        <td>
+                            <input class="normal-input form-control-sm" data-placement="top" title="Search number in the string of &#8455;" placeholder="Search &#8455;" type="text" id="eInput"/>
+                        </td>
+                  <td>
+                            <span><span class="bold-green" data-totals="" id="e-location-first"></span> (<span class="bold-green" data-totals="" id="e-location-summed"></span>)</span>
+                            <span id="e-result"></span>
+                            <span>
+                        <select data-placement="top" title="Number of occurrence" class="form-control-sm" id="e-position-index">
+                            <option value="1" selected="selected">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </span>
+                        </td>
+                    </tr>
+                    <tr class="hidden">
+                        <td>&#8455; from n: &nbsp;</td>
+                        <td><input class="normal-input form-control-sm" data-placement="top" title="Show &#8455; string from position n" placeholder="Show &#8455;" type="text" id="eStringLoc"/></td>
+                  <td class="bold-green">
+                            <span id="estring-loc-result"></span>
+                        </td>
+                    </tr>
+
+                    <tr class="hidden">
+                        <td>Find in &#8730;2:&nbsp;</td>
+                        <td>
+                            <input class="normal-input form-control-sm" data-placement="top" title="Search number in the string of &#8730;2:" placeholder="Search &#8730;2:" type="text" id="sqrtInput"/>
+                        </td>
+                 <td>
+                            <span><span class="bold-green" data-totals="" id="sqrt-location-first"></span> (<span class="bold-green" data-totals="" id="sqrt-location-summed"></span>)</span>
+                            <span id="sqrt-result"></span>
+                            <span>
+                        <select data-placement="top" title="Number of occurrence" class="form-control-sm" id="sqrt-position-index">
+                            <option value="1" selected="selected">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </span>
+                        </td>
+                    </tr>
+                    <tr class="hidden">
+                        <td>&#8730;2 from n: &nbsp;</td>
+                        <td><input class="normal-input form-control-sm" data-placement="top" title="Show &#8730;2: string from position n" placeholder="Show &#8730;2:" type="text" id="sqrtStringLoc"/></td>
+                     <td class="bold-green">
+                            <span id="sqrtstring-loc-result"></span>
+                        </td>
+                    </tr>
+
+                    <tr class="hidden">
+                        <td>Find in &#8730;3:&nbsp;</td>
+                        <td>
+                            <input class="normal-input form-control-sm" data-placement="top" title="Search number in the string of &#8730;3:" placeholder="Search &#8730;3:" type="text" id="sqrt3Input"/>
+                        </td>
+                    <td>
+                            <span><span class="bold-green" data-totals="" id="sqrt3-location-first"></span> (<span class="bold-green" data-totals="" id="sqrt3-location-summed"></span>)</span>
+                            <span id="sqrt3-result"></span>
+                            <span>
+                        <select data-placement="top" title="Number of occurrence" class="form-control-sm" id="sqrt3-position-index">
+                            <option value="1" selected="selected">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </span>
+                        </td>
+                    </tr>
+                    <tr class="hidden">
+                        <td>&#8730;3 from n: &nbsp;</td>
+                        <td><input class="normal-input form-control-sm" data-placement="top" title="Show &#8730;3: string from position n" placeholder="Show &#8730;3:" type="text" id="sqrt3StringLoc"/></td>
+                     <td class="bold-green">
+                            <span id="sqrt3string-loc-result"></span>
+                        </td>
+                    </tr>
+
+                    <tr class="hidden">
+                        <td>Find in &#8730;5:&nbsp;</td>
+                        <td>
+                            <input class="normal-input form-control-sm" data-placement="top" title="Search number in the string of &#8730;5:" placeholder="Search &#8730;5:" type="text" id="sqrt5Input"/>
+                        </td>
+                      <td>
+                            <span><span class="bold-green" data-totals="" id="sqrt5-location-first"></span> (<span class="bold-green" data-totals="" id="sqrt5-location-summed"></span>)</span>
+                            <span id="sqrt5-result"></span>
+                            <span>
+                        <select data-placement="top" title="Number of occurrence" class="form-control-sm" id="sqrt5-position-index">
+                            <option value="1" selected="selected">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </span>
+                        </td>
+                    </tr>
+                    <tr class="hidden">
+                        <td>&#8730;5 from n: &nbsp;</td>
+                        <td><input class="normal-input form-control-sm" data-placement="top" title="Show &#8730;5: string from position n" placeholder="Show &#8730;5:" type="text" id="sqrt5StringLoc"/></td>
+                      <td class="bold-green">
+                            <span id="sqrt5string-loc-result"></span>
+                        </td>
+                    </tr>
+
+                    <tr class="hidden">
+                        <td>Find in &#8730;7:&nbsp;</td>
+                        <td>
+                            <input class="normal-input form-control-sm" data-placement="top" title="Search number in the string of &#8730;7:" placeholder="Search &#8730;7:" type="text" id="sqrt7Input"/>
+                        </td>
+                       <td>
+                            <span><span class="bold-green" data-totals="" id="sqrt7-location-first"></span> (<span class="bold-green" data-totals="" id="sqrt7-location-summed"></span>)</span>
+                            <span id="sqrt7-result"></span>
+                            <span>
+                        <select data-placement="top" title="Number of occurrence" class="form-control-sm" id="sqrt7-position-index">
+                            <option value="1" selected="selected">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </span>
+                        </td>
+                    </tr>
+                    <tr class="hidden">
+                        <td>&#8730;7 from n: &nbsp;</td>
+                        <td><input class="normal-input form-control-sm" data-placement="top" title="Show &#8730;7: string from position n" placeholder="Show &#8730;7:" type="text" id="sqrt7StringLoc"/></td>
+                      <td class="bold-green">
+                            <span id="sqrt7string-loc-result"></span>
+                        </td>
+                    </tr>
+                    <tr class="hidden">
+                        <td>Find in &infin;:&nbsp;</td>
+                        <td>
+                            <input class="normal-input form-control-sm" data-placement="top" title="Search number in the string of &infin;:" placeholder="Search &infin;:" type="text" id="lemniInput"/>
+                        </td>
+                       <td>
+                            <span><span class="bold-green" data-totals="" id="lemni-location-first"></span> (<span class="bold-green" data-totals="" id="lemni-location-summed"></span>)</span>
+                            <span id="lemni-result"></span>
+                            <span>
+                        <select data-placement="top" title="Number of occurrence" class="form-control-sm" id="lemni-position-index">
+                            <option value="1" selected="selected">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </span>
+                        </td>
+                    </tr>
+                    <tr class="hidden">
+                        <td>&infin; from n: &nbsp;</td>
+                        <td><input class="normal-input form-control-sm" data-placement="top" title="Show &infin; string from position n" placeholder="Show &infin;:" type="text" id="lemniStringLoc"/></td>
+                       <td class="bold-green">
+                            <span id="lemnistring-loc-result"></span>
+                        </td>
+                    </tr>
+                    <tr class="hidden">
+                        <td title="Apéry's constant">Find in &zeta;:&nbsp;</td>
+                        <td>
+                            <input class="normal-input form-control-sm" data-placement="top" title="Search number in Apéry's constant:" placeholder="Search &zeta;:" type="text" id="zetaInput"/>
+                        </td>
+                      <td>
+                            <span><span class="bold-green" data-totals="" id="zeta-location-first"></span> (<span class="bold-green" data-totals="" id="zeta-location-summed"></span>)</span>
+                            <span id="zeta-result"></span>
+                            <span>
+                        <select data-placement="top" title="Number of occurrence" class="form-control-sm" id="zeta-position-index">
+                            <option value="1" selected="selected">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </span>
+                        </td>
+                    </tr>
+                    <tr class="hidden">
+                        <td title="Apéry's constant">&zeta; from n: &nbsp;</td>
+                        <td><input class="normal-input form-control-sm" data-placement="top" title="Show Apéry's constant from position n" placeholder="Show &zeta;:" type="text" id="zetaStringLoc"/></td>
+                       <td class="bold-green">
+                            <span id="zetastring-loc-result"></span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-responsive card bg-dark pi-table">
+                <table class="matrix-functions pi-table table-dark align-items-center" style="width: 100%">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th class="thead-dark" colspan="3">
+                            Matrix Functions &nbsp;&nbsp;&nbsp;
+                            <button id="selectActiveIrrational" class="btn-sm btn-dark" data-toggle="modal" data-target="#activeIrrationalsModal">Active irrationals</button>
+                            <div class="modal fade" id="activeIrrationalsModal" tabindex="-1" role="dialog" aria-labelledby="activeIrrationalsModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <div class="table-responsive card bg-dark pi-table">
+                                                <table id="activeIrrationalsTable" class="active-irrationals pi-table table-dark align-items-center" style="width: 100%">
+                                                    <thead class="thead-dark">
+                                                    <tr>
+                                                        <th class="thead-dark" colspan="2">
+                                                            Active Irrationals
+                                                            <!--<button id="selectActiveIrrational" class="btn-sm btn-dark" data-toggle="modal" data-target="#activeIrrationalsModal">Active irrationals</button>-->
+                                                        </th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody class="list">
+                                                    <tr>
+                                                        <td>
+                                                            <span class="glow-red">&pi;</span> Pi
+                                                        </td>
+                                                        <td>
+                                                            <label class="custom-toggle">
+                                                                <input id="active-irrational-pi" type="checkbox" checked>
+                                                                <span data-toggle="tooltip" title="0" id="activeIrrationalsLabel-pi" class="custom-toggle-slider rounded-circle" data-value="1" data-checked="0" data-label-off="&pi;" data-label-on="&pi;"></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="glow-red">&#981;</span> Phi
+                                                        </td>
+                                                        <td>
+                                                            <label class="custom-toggle">
+                                                                <input id="active-irrational-phi" type="checkbox" checked>
+                                                                <span data-toggle="tooltip" title="0" id="activeIrrationalsLabel-phi" class="custom-toggle-slider rounded-circle" data-value="1" data-checked="0" data-label-off="&#981;" data-label-on="&#981;"></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="glow-red">&#8455;</span> Euler
+                                                        </td>
+                                                        <td>
+                                                            <label class="custom-toggle">
+                                                                <input id="active-irrational-euler" type="checkbox" checked>
+                                                                <span data-toggle="tooltip" title="0" id="activeIrrationalsLabel-euler" class="custom-toggle-slider rounded-circle" data-value="1" data-checked="0" data-label-off="&#8455;" data-label-on="&#8455;"></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="glow-red">&#8730;2</span> Sqrt 2
+                                                        </td>
+                                                        <td>
+                                                            <label class="custom-toggle">
+                                                                <input id="active-irrational-sqrt2" type="checkbox" checked>
+                                                                <span data-toggle="tooltip" title="0" id="activeIrrationalsLabel-sqrt2" class="custom-toggle-slider rounded-circle" data-value="1" data-checked="0" data-label-off="&#8730;2" data-label-on="&#8730;2"></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="glow-red">&#8730;3</span> Sqrt 3
+                                                        </td>
+                                                        <td>
+                                                            <label class="custom-toggle">
+                                                                <input id="active-irrational-sqrt3" type="checkbox" checked>
+                                                                <span data-toggle="tooltip" title="0" id="activeIrrationalsLabel-sqrt3" class="custom-toggle-slider rounded-circle" data-value="1" data-checked="0" data-label-off="&#8730;3" data-label-on="&#8730;3"></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="glow-red">&#8730;5</span> Sqrt 5
+                                                        </td>
+                                                        <td>
+                                                            <label class="custom-toggle">
+                                                                <input id="active-irrational-sqrt5" type="checkbox" checked>
+                                                                <span data-toggle="tooltip" title="0" id="activeIrrationalsLabel-sqrt5" class="custom-toggle-slider rounded-circle" data-value="1" data-checked="0" data-label-off="&#8730;5" data-label-on="&#8730;5"></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="glow-red">&#8730;7</span> Sqrt 7
+                                                        </td>
+                                                        <td>
+                                                            <label class="custom-toggle">
+                                                                <input id="active-irrational-sqrt7" type="checkbox" checked>
+                                                                <span data-toggle="tooltip" title="0" id="activeIrrationalsLabel-sqrt7" class="custom-toggle-slider rounded-circle" data-value="1" data-checked="0" data-label-off="&#8730;7" data-label-on="&#8730;7"></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="glow-red">&infin;</span> Lemniscate
+                                                        </td>
+                                                        <td>
+                                                            <label class="custom-toggle">
+                                                                <input id="active-irrational-lemni" type="checkbox" checked>
+                                                                <span data-toggle="tooltip" title="0" id="activeIrrationalsLabel-lemni" class="custom-toggle-slider rounded-circle" data-value="1" data-checked="0" data-label-off="&infin;" data-label-on="&infin;"></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span class="glow-red">&zeta;</span> Zeta
+                                                        </td>
+                                                        <td>
+                                                            <label class="custom-toggle">
+                                                                <input id="active-irrational-zeta" type="checkbox" checked>
+                                                                <span data-toggle="tooltip" title="0" id="activeIrrationalsLabel-zeta" class="custom-toggle-slider rounded-circle" data-value="1" data-checked="0" data-label-off="&zeta;" data-label-on="&zeta;"></span>
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button id="selectActiveIrrationalsSave" type="button" class="btn btn-secondary" data-dismiss="modal">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </th>
+                    </tr>
+
+                    </thead>
+                    <tbody class="list">
+                    <tr>
+                        <td>
+                            Active:
+                        </td>
+                        <td id="activeIrrational" class="glow-red" colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Sum
+                        </td>
+                        <td class="matrix-form-td">
+                            <input id="matrixSearchPositionA" placeholder="Position A" class="normal-input form-control-sm" data-placement="top" title="Sum digits from position A to B in the matrix" type="text"/>
+                            <input id="matrixSearchPositionB" placeholder="Position B" class="normal-input form-control-sm" data-placement="top" title="Sum digits from position A to B in the matrix" type="text"/>
+                        </td>
+                        <td class="matrix-form-td">
+                            Result:<span id="matrixSearchResult" class="bold-green" data-totals="0"></span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+        </div>
+        <div class="col">
+            <div class="card bg-dark pi-table">
+                <select class="form-control-sm" id="matrixSelect">
+                    <option value="pi" selected>&pi;</option>
+                    <option value="phi">&#981;</option>
+                    <option value="euler">&#8455;</option>
+                    <option value="sqrt">&#8730;2</option>
+                    <option value="sqrt3">&#8730;3</option>
+                    <option value="sqrt5">&#8730;5</option>
+                    <option value="sqrt7">&#8730;7</option>
+                    <option value="lemni">&infintie;</option>
+                    <option value="zeta">&zeta;</option>
+                </select>
+
+                <table id="matrixTableHead" class="pi-table table-dark align-items-center" style="width: 100%">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th class="thead-dark" colspan="49">
+                            Enter the Matrix
+                        </th>
+                    </tr>
+                    <tr>
+                        <th class="thead-dark left" colspan="49">
+                            <input class="form-control-sm" type="text" id="highlightInputA" placeholder="number" title="Highlight number"/>
+                            Amount: <span id="matrixsumA"></span>
+                            <input class="form-control-sm" type="text" id="highlightInputB" placeholder="number" title="Highlight number"/>
+                            Amount: <span id="matrixsumB"></span>
+                            <button id="clearHighlights" class="btn-dribbble">Clear</button>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th colspan="5">
+                            <label class="custom-toggle">
+                                <input id="matrix0" type="checkbox" checked>
+                                <span data-toggle="tooltip" title="0" id="matrixLabel0" class="custom-toggle-slider rounded-circle" data-value="0" data-checked="0" data-label-off="0" data-label-on="0"></span>
+                            </label>
+                        </th>
+                        <th colspan="5">
+                            <label class="custom-toggle">
+                                <input id="matrix1" type="checkbox" checked>
+                                <span data-toggle="tooltip" title="0" id="matrixLabel1" class="custom-toggle-slider rounded-circle" data-value="1" data-checked="0" data-label-off="1" data-label-on="1"></span>
+                            </label>
+                        </th>
+                        <th colspan="5">
+                            <label class="custom-toggle">
+                                <input id="matrix2" type="checkbox" checked>
+                                <span data-toggle="tooltip" title="0" id="matrixLabel2" class="custom-toggle-slider rounded-circle" data-value="2" data-checked="0" data-label-off="2" data-label-on="2"></span>
+                            </label>
+                        </th>
+                        <th colspan="5">
+                            <label class="custom-toggle">
+                                <input id="matrix3" type="checkbox" checked>
+                                <span data-toggle="tooltip" title="0" id="matrixLabel3" class="custom-toggle-slider rounded-circle" data-value="3" data-checked="0" data-label-off="3" data-label-on="3"></span>
+                            </label>
+                        </th>
+                        <th colspan="5">
+                            <label class="custom-toggle">
+                                <input id="matrix4" type="checkbox" checked>
+                                <span data-toggle="tooltip" title="0" id="matrixLabel4" class="custom-toggle-slider rounded-circle" data-value="4" data-checked="0" data-label-off="4" data-label-on="4"></span>
+                            </label>
+                        </th>
+                        <th colspan="5">
+                            <label class="custom-toggle">
+                                <input id="matrix5" type="checkbox" checked>
+                                <span data-toggle="tooltip" title="0" id="matrixLabel5" class="custom-toggle-slider rounded-circle" data-value="5" data-checked="0" data-label-off="5" data-label-on="5"></span>
+                            </label>
+                        </th>
+                        <th colspan="5">
+                            <label class="custom-toggle">
+                                <input id="matrix6" type="checkbox" checked>
+                                <span data-toggle="tooltip" title="0" id="matrixLabel6" class="custom-toggle-slider rounded-circle" data-value="6" data-checked="0" data-label-off="6" data-label-on="6"></span>
+                            </label>
+                        </th>
+                        <th colspan="5">
+                            <label class="custom-toggle">
+                                <input id="matrix7" type="checkbox" checked>
+                                <span data-toggle="tooltip" title="0" id="matrixLabel7" class="custom-toggle-slider rounded-circle" data-value="7" data-checked="0" data-label-off="7" data-label-on="7"></span>
+                            </label>
+                        </th>
+                        <th colspan="5">
+                            <label class="custom-toggle">
+                                <input id="matrix8" type="checkbox" checked>
+                                <span data-toggle="tooltip" title="0" id="matrixLabel8" class="custom-toggle-slider rounded-circle" data-value="8" data-checked="0" data-label-off="8" data-label-on="8"></span>
+                            </label>
+                        </th>
+                        <th colspan="5">
+                            <label class="custom-toggle">
+                                <input id="matrix9" type="checkbox" checked>
+                                <span data-toggle="tooltip" title="0" id="matrixLabel9" class="custom-toggle-slider rounded-circle" data-value="9" data-checked="0" data-label-off="9" data-label-on="9"></span>
+                            </label>
+                        </th>
+                    </tr>
+                    </thead>
+                </table>
+                <table id="matrixTable" class="pi-table table-dark align-items-center" style="width: 100%">
+                    <tbody class="list"></tbody>
+                </table>
+                <select id="matrixLoopIndex">
+                    <option value="1" selected>1 - 1000</option>
+                    <option value="1001">1001 - 2000</option>
+                    <option value="2001">2001 - 3000</option>
+                    <option value="3001">3001 - 4000</option>
+                    <option value="4001">4001 - 5000</option>
+                    <option value="5001">5001 - 6000</option>
+                    <option value="6001">6001 - 7000</option>
+                    <option value="7001">7001 - 8000</option>
+                    <option value="8001">8001 - 9000</option>
+                    <option value="9001">9001 - 10000</option>
+                    <option value="10001">10001 - 11000</option>
+                    <option value="2001">11001 - 12000</option>
+                    <option value="2001">12001 - 13000</option>
+                    <option value="2001">13001 - 14000</option>
+                    <option value="2001">14001 - 15000</option>
+                    <option value="2001">15001 - 16000</option>
+                    <option value="2001">16001 - 17000</option>
+                    <option value="2001">17001 - 18000</option>
+                    <option value="2001">18001 - 19000</option>
+                    <option value="2001">19001 - 20000</option>
+
+                </select>
+            </div>
+        </div>
+        <div class="input-slider-container">
+            <div id="input-slider" class="input-slider" data-range-value-min="100" data-range-value-max="500"></div>
+            <div class="row mt-3 d-none">
+                <div class="col-6">
+                    <span id="input-slider-value" class="range-slider-value" data-range-value-low="100"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js?t=16"></script>
+    <!-- 3rd party -->
+    <script src="js/js.cookie.js?t=16"></script>
+    <script src="js/bootstrap.bundle.min.js?t=16"></script>
+    <script src="js/nouislider.min.js"></script>
+    <script src="js/argon.min.js?t=16"></script>
+
+    <!-- project -->
+    <script src="js/decoder/pi-1m.js"></script>
+    <script src="js/decoder/phi-1m.js"></script>
+    <script src="js/decoder/euler-1m.js"></script>
+    <script src="js/decoder/sqrt2-1m.js"></script>
+    <script src="js/decoder/sqrt3-1m.js"></script>
+    <script src="js/decoder/sqrt5-1m.js"></script>
+    <script src="js/decoder/sqrt7-1m.js"></script>
+    <script src="js/decoder/lemni-1m.js"></script>
+    <script src="js/decoder/zeta-1m.js"></script>
+    <script src="js/decoder/composites.js?t=16"></script>
+    <script src="js/decoder/hexagonal.js?t=16"></script>
+    <script src="js/decoder/octagonal.js"></script>
+    <script src="js/decoder/starnumber.js"></script>
+    <script src="js/decoder/primes-list.js?t=16"></script>
+    <script src="js/decoder/triangulars.js?t=16"></script>
+    <script src="js/decoder/tetrahedral.js?t=16"></script>
+    <script src="js/decoder/fibonaccis.js?t=16"></script>
+    <script src="js/decoder/Primes.js?t=16"></script>
+    <script src="js/decoder/IrrationalNumber.js"></script>
+    <script src="js/decoder/lucas.js"></script>
+    <script src="js/decoder/FactorMatrix.js"></script>
+    <script src="js/decoder/NumberHandler.js"></script>
+    <script src="js/decoder/IrrationalHandler.js"></script>
+    <script src="js/decoder/Matrix.js"></script>
+    <script src="js/decoder/CorePiPhiEuler.js"></script>
+</div>
+</body>
+</html>
