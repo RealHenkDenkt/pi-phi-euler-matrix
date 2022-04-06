@@ -6,7 +6,7 @@ IrrationalHandler.prototype.setNumber = function (number) {
     this.number = number;
 }
 
-IrrationalHandler.prototype.getRowForNumber = function () {
+IrrationalHandler.prototype.getRowForNumber = function (number) {
     this.setNumber(number);
     return this.getPositionAndSums();
 }

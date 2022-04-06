@@ -29,6 +29,25 @@ IrrationalNumber.prototype.getAllIndexes = function (val, range = this.type, add
     return indexes;
 }
 
+IrrationalNumber.prototype.search = function (number) {
+    let result = parseInt(this.type.indexOf(number)),
+        positions = [];
+
+    if (-1 !== result) {
+        result++;
+        // add some bonus summation
+        if (number.length > 1) {
+            for (let i = 0; i < number.length; i++) {
+                positions.push(result + i);
+            }
+        } else {
+            return [result];
+        }
+    }
+    return positions;
+}
+
+
 IrrationalNumber.prototype.searchDeep = function (search, index ) {
     let positions = [],
         result = getPosition(this.type, search, index);
@@ -66,24 +85,7 @@ IrrationalNumber.prototype.getPositionAndSum = function (number) {
 
 }
 
-IrrationalNumber.prototype.search = function (number) {
-    let result = this.type.indexOf(number),
-        positions = [];
-
-    if (-1 !== result) {
-        result++;
-        // add some bonus summation
-        if (number.length > 1) {
-            for (let i = 0; i < number.length; i++) {
-                positions.push(result + i);
-            }
-        } else {
-            return [result];
-        }
-    }
-    return positions;
-}
-
 IrrationalNumber.prototype.getStringLocation = function (number) {
+    if (number < 10) return this.type.substr((number-1), 10);
     return this.type.substr((number - 10), 30);
 }

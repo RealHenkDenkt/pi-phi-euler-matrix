@@ -79,30 +79,34 @@ $(document).ready(function (){
         positionsDetailsButton = $('#morePositions'),
         linkPositions = $('#linkPositions');
 
-    $('#pi-location-first, ' +
-    '#pi-location-summed, ' +
-    '#e-location-first, ' +
-    '#e-location-summed, ' +
-    '#octaSearchResult, ' +
-    '#matrixSearchResult, ' +
-    '#matrixFacResult, ' +
-    '#phi-location-first, ' +
-    '#phi-location-summed, ' +
-    '#sqrt-location-first, ' +
-    '#sqrt-location-summed, ' +
-    '#sqrt3-location-first, ' +
-    '#sqrt3-location-summed, ' +
-    '#sqrt5-location-first, ' +
-    '#sqrt5-location-summed, ' +
-    '#sqrt7-location-first, ' +
-    '#sqrt7-location-summed, ' +
-    '#zeta-location-first, ' +
-    '#zeta-location-summed, ' +
-    '#lemni-location-first, ' +
-    '#lemni-location-summed')
+   $(
+        '#pi-location-first, ' +
+        '#pi-location-summed, ' +
+        '#e-location-first, ' +
+        '#e-location-summed, ' +
+        '#matrixSearchResult, ' +
+        '#phi-location-first, ' +
+        '#phi-location-summed, ' +
+        '#sqrt-location-first, ' +
+        '#sqrt-location-summed, ' +
+        '#sqrt3-location-first, ' +
+        '#sqrt3-location-summed, ' +
+        '#sqrt5-location-first, ' +
+        '#sqrt5-location-summed, ' +
+        '#sqrt7-location-first, ' +
+        '#sqrt7-location-summed, ' +
+        '#zeta-location-first, ' +
+        '#zeta-location-summed, ' +
+        '#lemni-location-first, ' +
+        '#lemni-location-summed')
+        .attr('data-toggle', 'modal')
+        .attr('data-target', '#factorMatrixModal')
         .on('click', function () {
-
-    });
+            let value = parseInt($(this).attr('data-totals'));
+            let factorMatrix = new FactorMatrix(value, 0, true);
+            factorMatrix.fillModalContent(value);
+            $('#factorMatrixModal').show();
+        });
 
     let matrix = new Matrix();
     matrix.load();
@@ -440,7 +444,7 @@ $(document).ready(function (){
     function searchIrrationalPosition (type, number) {
         // Return if no input
         let element = '#'+type.toLowerCase()+'Input';
-        if ($(element).val() === '') return;
+        if ($(element).val() === '' || isNaN($(element).val())) return;
 
         if (false === $('#linkPositions')[0].checked ) {
             linkPositionFields(number);
@@ -492,7 +496,7 @@ $(document).ready(function (){
         let indexElement = $('#'+type.toLowerCase()+'PositionIndex');
 
         let irrational = new IrrationalNumber(type),
-            positions,
+            positions = [],
             index = parseInt(indexElement.val());
         if (index > 1) {
             positions = irrational.searchDeep(number, index);
@@ -500,17 +504,20 @@ $(document).ready(function (){
             positions = irrational.search(number);
         }
 
-        if (positions.length > 0) {
-            position.html(positions[0]).attr('data-totals', positions[0]);
+        if (number > 9) {
+            let
+                string = number.toString(),
+                summed = 0;
 
-            if (positions.length > 1) {
-                let p = positions.reduce((a, b) => a + b, 0);
-                summedPosition.html(p).attr('data-totals', p);
+            for (let i = 0; i < string.length; i++) {
+                summed += positions[0] + i;
             }
+            summedPosition.html(summed).attr('data-totals', summed);
         }
+        position.html(positions[0]).attr('data-totals', positions[0]);
+
+
     }
-
-
 
     function irrationalHtml(str) {
         let start = '<em class="irrationalStart">'+ str.substr(0,9) + '</em>';
@@ -518,61 +525,6 @@ $(document).ready(function (){
         let end = '<em class="irrationalEnd">' + str.substr(19, 10) + '</em>';
         str = start + middle + end;
         return str;
-    }
-
-    function showPhiStringLocation() {
-        let phi = new IrrationalNumber('PHI');
-        let number = phiStringLoc.val();
-        let html = irrationalHtml(phi.getStringLocation(number));
-        phiStringLocResult.html(html);
-    }
-
-    function showEStringLocation() {
-        let e = new IrrationalNumber('E');
-        let number = eStringLoc.val();
-        let html = irrationalHtml(e.getStringLocation(number));
-        eStringLocResult.html(html);
-    }
-
-    function showSqrtStringLocation() {
-        let sqrt = new IrrationalNumber('SQRT');
-        let number = sqrtStringLoc.val();
-        let html = irrationalHtml(sqrt.getStringLocation(number));
-        sqrtStringLocResult.html(html);
-    }
-
-    function showSqrt3StringLocation() {
-        let sqrt = new IrrationalNumber('SQRT3');
-        let number = sqrtStringLoc.val();
-        let html = irrationalHtml(sqrt.getStringLocation(number));
-        sqrt3StringLocResult.html(html);
-    }
-    function showSqrt5StringLocation() {
-        let sqrt = new IrrationalNumber('SQRT5');
-        let number = sqrt5StringLoc.val();
-        let html = irrationalHtml(sqrt.getStringLocation(number));
-        sqrt5StringLocResult.html(html);
-    }
-    function showSqrt7StringLocation() {
-        let sqrt = new IrrationalNumber('SQRT7');
-        let number = sqrt7StringLoc.val();
-        let html = irrationalHtml(sqrt.getStringLocation(number));
-        sqrt7StringLocResult.html(html);
-    }
-
-
-    function showlemniStringLocation() {
-        let sqrt = new IrrationalNumber('LEMNI');
-        let number = lemniStringLoc.val();
-        let html = irrationalHtml(sqrt.getStringLocation(number));
-        lemniStringLocResult.html(html);
-    }
-
-    function showZetaStringLocation() {
-        let sqrt = new IrrationalNumber('ZETA');
-        let number = zetaStringLoc.val();
-        let html = irrationalHtml(sqrt.getStringLocation(number));
-        zetaStringLocResult.html(html);
     }
 
 });

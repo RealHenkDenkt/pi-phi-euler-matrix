@@ -192,7 +192,7 @@ FactorMatrix.prototype.setModalClicks = function () {
 
 FactorMatrix.prototype.fillModalContent = function (number) {
     // left
-    this.setModalContent(number, 'l');
+    this.setModalContent(parseInt(number), 'l');
     let mirror = '',
         numberString = number.toString();
 

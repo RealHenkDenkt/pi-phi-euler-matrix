@@ -17,6 +17,180 @@
 </head>
 
 <body style="background: #1a174d">
+<!-- Modal -->
+<div class="modal fade" id="factorMatrixModal" tabindex="-1" role="dialog" aria-labelledby="factorMatrixModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content bg-dark">
+            <input id="factorModalNumber" type="hidden" value="0">
+            <table id="factorMatrixModalTable" class="table-dark">
+                <thead>
+                <tr>
+                    <th>
+                        <span class="bold-blue" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&rect;</span>
+                    </th>
+                    <th>
+                        <span class="bold-blue" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&prime;</span>
+                    </th>
+                    <th>
+                        <span class="bold-blue" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9727;</span>
+                    </th>
+                    <th>
+                        <span class="bold-blue" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#966;</span>
+                    </th>
+                    <th>
+                        <span class="bold-blue" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9651;</span>
+                    </th>
+                    <th>
+                        <span class="bold-blue" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9708;</span>
+                    </th>
+                    <th>
+                        <span class="bold-blue" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#128972;</span>
+                    </th>
+                    <th>
+                        <span class="bold-blue" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#11041;</span>
+                    </th>
+                    <th>
+                        <span class="bold-blue" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#x2BC3;</span>
+                    </th>
+                    <th>
+                        <span class="bold-blue" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&half;</span>
+                    </th>
+                    <th>
+                        <span class="bold-blue" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">L</span>
+                    </th>
+                    <th class="cellCentered">Mirror</th>
+                    <th>
+                        <span class="bold-blue" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&rect;</span>
+                    </th>
+                    <th>
+                        <span class="bold-blue" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&prime;</span>
+                    </th>
+                    <th>
+                        <span class="bold-blue" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9727;</span>
+                    </th>
+                    <th>
+                        <span class="bold-blue" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#966;</span>
+                    </th>
+                    <th>
+                        <span class="bold-blue" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9651;</span>
+                    </th>
+                    <th>
+                        <span class="bold-blue" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#9708;</span>
+                    </th>
+                    <th>
+                        <span class="bold-blue" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#128972;</span>
+                    </th>
+                    <th>
+                        <span class="bold-blue" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#11041;</span>
+                    </th>
+                    <th>
+                        <span class="bold-blue" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&#x2BC3;</span>
+                    </th>
+                    <th>
+                        <span class="bold-blue" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&half;</span>
+                    </th>
+                    <th>
+                        <span class="bold-blue" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">L</span>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="bold-green" id="fml-composite"></td>
+                    <td class="bold-green" id="fml-prime"></td>
+                    <td class="bold-green" id="fml-pythagorean-prime"></td>
+                    <td class="bold-green" id="fml-fibonacci"></td>
+                    <td class="bold-green" id="fml-triangular"></td>
+                    <td class="bold-green" id="fml-tetrahedral"></td>
+                    <td class="bold-green" id="fml-star"></td>
+                    <td class="bold-green" id="fml-hexagonal"></td>
+                    <td class="bold-green" id="fml-octagonal"></td>
+                    <td class="bold-green" id="fml-semi-prime"></td>
+                    <td class="bold-green" id="fml-lucas"></td>
+                    <td></td>
+                    <td class="bold-green" id="fmr-composite"></td>
+                    <td class="bold-green" id="fmr-prime"></td>
+                    <td class="bold-green" id="fmr-pythagorean-prime"></td>
+                    <td class="bold-green" id="fmr-fibonacci"></td>
+                    <td class="bold-green" id="fmr-triangular"></td>
+                    <td class="bold-green" id="fmr-tetrahedral"></td>
+                    <td class="bold-green" id="fmr-star"></td>
+                    <td class="bold-green" id="fmr-hexagonal"></td>
+                    <td class="bold-green" id="fmr-octagonal"></td>
+                    <td class="bold-green" id="fmr-semi-prime"></td>
+                    <td class="bold-green" id="fmr-lucas"></td>
+                </tr>
+                <tr>
+                    <td class="cellRight" colspan="10"><span class="bold-green" id="fml-number"></span></td>
+                    <td class="cellCentered" colspan="3">Number</td>
+                    <td colspan="10"><span id="fmr-number"></span></td>
+                </tr>
+                <tr>
+                    <td class="cellRight" colspan="10"><span id="fml-reduced"></span></td>
+                    <td class="cellCentered" colspan="3">Reduced</td>
+                    <td colspan="10"><span id="fmr-reduced"></span></td>
+                </tr>
+                <tr>
+                    <td class="cellRight" colspan="10"> <span class="bold-white" id="fml-cubed"></span></td>
+                    <td class="cellCentered" colspan="3">Cubed</td>
+                    <td colspan="10"><span class="bold-white" id="fmr-cubed"></span></td>
+                </tr>
+                <tr>
+                    <td class="cellRight" colspan="10"> <span id="fml-times-self"></span></td>
+                    <td class="cellCentered" colspan="3">Squared</td>
+                    <td colspan="10"><span id="fmr-times-self"></span></td>
+                </tr>
+                <tr>
+                    <td class="cellRight" colspan="10"> <span id="fml-times-mirror"></span></td>
+                    <td class="cellCentered" colspan="3">* Mirror</td>
+                    <td colspan="10"><span id="fmr-times-mirror"></span></td>
+                </tr>
+
+                <tr>
+                    <td class="cellRight" colspan="10"><span id="fml-plus-mirror"></span></td>
+                    <td class="cellCentered" colspan="3">+ Mirror</td>
+                    <td colspan="10"><span id="fmr-plus-mirror"></span></td>
+                </tr>
+                <tr>
+                    <td class="cellRight" colspan="10"><span id="fml-summed"></span></td>
+                    <td class="cellCentered" colspan="3">Summed</td>
+                    <td colspan="10"><span id="fmr-summed"></span></td>
+                </tr>
+                <tr>
+                    <td class="cellRight" colspan="10"><span class="bold-white" id="fml-number-of-divisors"></span></td>
+                    <td class="cellCentered" colspan="3">Total divisors</td>
+                    <td colspan="10"><span class="bold-white" id="fmr-number-of-divisors"></span></td>
+                </tr>
+                <tr>
+                    <td class="cellRight" colspan="10"><span class="bold-white" id="fml-summed-divisors"></span></td>
+                    <td class="cellCentered" colspan="3">+ Divisors</td>
+                    <td colspan="10"><span class="bold-white" id="fmr-summed-divisors"></span></td>
+                </tr>
+                <tr>
+                    <td class="cellRight" colspan="10"><span class="bold-white" id="fml-summed-divisors-full"></span></td>
+                    <td class="cellCentered" colspan="3">+ divisors (full)</td>
+                    <td colspan="10"><span class="bold-white" id="fmr-summed-divisors-full"></span></td>
+                </tr>
+                <tr>
+                    <td class="cellRight"  colspan="10"><span class="bold-green" id="fml-factorization-text"></span></td>
+                    <td class="cellCentered" colspan="3">Factorization</td>
+                    <td colspan="10"><span class="bold-green" id="fmr-factorization-text"></span></td>
+                </tr>
+                <tr>
+                    <td class="cellRight"  colspan="10"><span class="bold-white" id="fml-divisors"></span></td>
+                    <td class="cellCentered" colspan="3">Divisors</td>
+                    <td colspan="10"><span class="bold-white" id="fmr-divisors"></span></td>
+                </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+<!-- 23 cells, 1 center -->
+
 <div class="container bg-gradient-purple">
     <div class="row">
         <div style="width:100%">
@@ -134,7 +308,7 @@
                     </tr>
 
 
-                    <tr class="hidden">
+                    <tr>
                         <td>Find in &#8455;:&nbsp;</td>
                         <td>
                             <input class="normal-input form-control-sm" data-placement="top" title="Search number in the string of &#8455;" placeholder="Search &#8455;" type="text" id="eInput"/>
@@ -158,7 +332,7 @@
                     </span>
                         </td>
                     </tr>
-                    <tr class="hidden">
+                    <tr>
                         <td>&#8455; from n: &nbsp;</td>
                         <td><input class="normal-input form-control-sm" data-placement="top" title="Show &#8455; string from position n" placeholder="Show &#8455;" type="text" id="eStringLoc"/></td>
                   <td class="bold-green">
