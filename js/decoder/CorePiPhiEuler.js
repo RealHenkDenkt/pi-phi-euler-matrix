@@ -177,30 +177,36 @@ $(document).ready(function (){
         });
     });
     highlightInputA.on('input', function () {
+        if ($(this).val() === '') return;
         let matrix = new Matrix();
         matrix.highlightNumber('A');
     });
     highlightInputB.on('input', function () {
+        if ($(this).val() === '') return;
         let matrix = new Matrix();
         matrix.highlightNumber('B');
     });
 
 
     matrixSearchPositionA.on('input', function (){
+        if ($(this).val() === '') return;
         let matrix = new Matrix();
         matrix.sumPositionsCombined();
     });
 
     matrixSearchPositionB.on('input', function (){
+        if ($(this).val() === '') return;
         let matrix = new Matrix();
         matrix.sumPositionsCombined();
     });
 
     matrixFacPositionA.on('input', function () {
+        if ($(this).val() === '') return;
         let matrix = new Matrix();
         matrix.facPositionsCombined();
     })
     matrixFacPositionB.on('input', function () {
+        if ($(this).val() === '') return;
         let matrix = new Matrix();
         matrix.facPositionsCombined();
     })
@@ -312,6 +318,10 @@ $(document).ready(function (){
         //showPiStringLocation();
         showIrrationalStringLocation('PI', $(this).val());
     });
+
+    // CLEAR PRELOADER
+    $('#preloader').hide();
+
 
     function linkIndexFields (number) {
         if (undefined === number) return;

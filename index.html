@@ -192,6 +192,9 @@
 <!-- 23 cells, 1 center -->
 
 <div class="container bg-gradient-purple">
+    <div class="center-screen" id="preloader">
+        <img src="img/preload4.gif" alt="No preloader here">
+    </div>
     <div class="row">
         <div style="width:100%">
             <h1 class="titleHeader">Pi-Phi-Euler-Matrix</h1>
@@ -228,9 +231,9 @@
                         <td>
                             <input class="normal-input form-control-sm" data-placement="top" title="Search number in the string of &pi;" placeholder="Search &pi;" type="text" id="piInput"/>
                         </td>
-                        <td>
-                            <span><span class="bold-green" data-totals="" id="pi-location-first"></span> (<span class="bold-green" data-totals="" id="pi-location-summed"></span>)</span>
-                            <span id="pi-result"></span>
+                        <td colspan="2">
+                            is found in &pi; at position:<span><span class="bold-green" data-totals="" id="pi-location-first"></span> (<span class="bold-green" data-totals="" id="pi-location-summed"></span>)</span>
+
                             <span>
                         <select data-placement="top" title="Number of occurrence" class="form-control-sm" id="pi-position-index">
                             <option value="1" selected="selected">1</option>
