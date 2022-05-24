@@ -503,11 +503,12 @@ $(document).ready(function (){
     function getIrrationalPosition(type, number, position, summedPosition) {
         summedPosition.html('');
         position.html('');
-        let indexElement = $('#'+type.toLowerCase()+'PositionIndex');
-
-        let irrational = new IrrationalNumber(type),
+        let element = '#'+type.toLowerCase()+'-position-index',
+            indexElement = $(element),
+            irrational = new IrrationalNumber(type),
             positions = [],
             index = parseInt(indexElement.val());
+
         if (index > 1) {
             positions = irrational.searchDeep(number, index);
         } else {
