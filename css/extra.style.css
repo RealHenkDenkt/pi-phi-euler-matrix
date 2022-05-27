@@ -558,6 +558,9 @@ em.irrationalEnd {
 .cellRight {
     text-align: right;
 }
+#fml-number, #fmr-number {
+    font-size: 1.4em;
+}
 
 .center-screen {
     display: flex;

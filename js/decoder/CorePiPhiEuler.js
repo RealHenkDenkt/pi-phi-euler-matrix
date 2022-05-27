@@ -229,7 +229,7 @@ $(document).ready(function (){
         showIrrationalStringLocation('EULER', $(this).val());
     });
     ePositionIndex.on('change', function () {
-        searchIrrationalPosition('EULER', parseInt(eInput.val()));
+        searchIrrationalPosition('E', parseInt(eInput.val()));
     });
 
     lemniInput.on('input', function () {
@@ -461,6 +461,7 @@ $(document).ready(function (){
             getIrrationalPosition('PI', number, piStringPosition, piStringSummedPosition);
             getIrrationalPosition('PHI', number, phiStringPosition, phiStringSummedPosition);
             getIrrationalPosition('EULER', number, eStringPosition, eStringSummedPosition);
+            getIrrationalPosition('E', number, eStringPosition, eStringSummedPosition);
             getIrrationalPosition('SQRT', number, sqrtStringPosition, sqrtStringSummedPosition);
             getIrrationalPosition('SQRT3', number, sqrt3StringPosition, sqrt3StringSummedPosition);
             getIrrationalPosition('SQRT5', number, sqrt5StringPosition, sqrt5StringSummedPosition);
