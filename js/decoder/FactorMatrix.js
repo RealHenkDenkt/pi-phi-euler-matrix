@@ -252,6 +252,10 @@ FactorMatrix.prototype.clearModalContent = function (direction) {
     this.setModalCell(element, '');
     element = '#fm'+direction+'-binary';
     this.setModalCell(element, '');
+    element = '#fm'+direction+'-base3';
+    this.setModalCell(element, '');
+    element = '#fm'+direction+'-base6';
+    this.setModalCell(element, '');
     element = '#fm'+direction+'-base7';
     this.setModalCell(element, '');
     element = '#fm'+direction+'-base8';
@@ -363,6 +367,10 @@ FactorMatrix.prototype.setModalContent = function (number, direction) {
 
     element = '#fm'+direction+'-binary';
     this.setModalCell(element, number.toString(2));
+    element = '#fm'+direction+'-base3';
+    this.setModalCell(element, number.toString(3));
+    element = '#fm'+direction+'-base6';
+    this.setModalCell(element, number.toString(6));
     element = '#fm'+direction+'-base7';
     this.setModalCell(element, number.toString(7));
     element = '#fm'+direction+'-base8';
