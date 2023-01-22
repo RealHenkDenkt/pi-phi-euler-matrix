@@ -539,6 +539,7 @@ em.irrationalEnd {
 #matrixTable {
     border-spacing: 0;
     border-collapse: collapse;
+    table-layout: fixed;
 }
 #matrixTable td {
 
@@ -561,11 +562,23 @@ em.irrationalEnd {
 #fml-number, #fmr-number {
     font-size: 1.4em;
 }
+#matrixTable tr {
+    height: 10px!important;
+    padding:0;
+    margin:0;
 
+}
 .center-screen {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     min-height: 100vh;
+}
+td.matrix-cell {
+    width: 10px!important;
+    height: 10px!important;
+}
+.irrational-finder, .irrational-locator {
+	font-weight: bold;
 }

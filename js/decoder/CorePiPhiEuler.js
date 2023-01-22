@@ -417,34 +417,47 @@ $(document).ready(function (){
             getIrrationalStringLocation('SQRT7', sqrt7StringLoc, sqrt7StringLocResult);
             getIrrationalStringLocation('LEMNI', lemniStringLoc, lemniStringLocResult);
             getIrrationalStringLocation('SQRT',  zetaStringLoc, zetaStringLocResult);
+            
+            $('.irrational-locator').each(function (){
+				$(this).html(number);
+			})
         } else {
             switch (type) {
                 case 'PI':
                     getIrrationalStringLocation('PI', piStringLoc, piStringLocResult);
+                    $('#pi-locator').html(number);
                     break;
                 case 'PHI':
                     getIrrationalStringLocation('PHI', phiStringLoc, phiStringLocResult);
+					$('#phi-locator').html(number);                    
                     break;
                 case 'EULER':
                     getIrrationalStringLocation('EULER', eStringLoc, eStringLocResult);
+                    $('#euler-locator').html(number);
                     break;
                 case 'SQRT':
                     getIrrationalStringLocation('SQRT', sqrtStringLoc, sqrtStringLocResult);
+                    $('#sqrt-locator').html(number);
                     break;
                 case 'SQRT3':
                     getIrrationalStringLocation('SQRT3', sqrt3StringLoc, sqrt3StringLocResult);
+                    $('#sqrt3-locator').html(number);
                     break;
                 case 'SQRT5':
                     getIrrationalStringLocation('SQRT5', sqrt5StringLoc, sqrt5StringLocResult);
+                    $('#sqrt5-locator').html(number);
                     break;
                 case 'SQRT7':
                     getIrrationalStringLocation('SQRT7', sqrt7StringLoc, sqrt7StringLocResult);
+                    $('#sqrt7-locator').html(number);
                     break;
                 case 'LEMNI':
                     getIrrationalStringLocation('LEMNI', lemniStringLoc, lemniStringLocResult);
+                    $('#lemni-locator').html(number);
                     break;
                 case 'ZETA':
                     getIrrationalStringLocation('SQRT', zetaStringLoc, zetaStringLocResult);
+                    $('#zeta-locator').html(number);
                     break;
             }
         }
@@ -468,34 +481,47 @@ $(document).ready(function (){
             getIrrationalPosition('SQRT7', number, sqrt7StringPosition, sqrt7StringSummedPosition);
             getIrrationalPosition('LEMNI', number, lemniStringPosition, lemniStringSummedPosition);
             getIrrationalPosition('ZETA', number, zetaStringPosition, zetaStringSummedPosition);
+            
+            $('.irrational-finder').each(function (){
+				$(this).html(number);
+			});
         } else {
             switch (type) {
                 case 'PI':
                     getIrrationalPosition('PI', number, piStringPosition, piStringSummedPosition);
+                    $('#pi-finder').html(number);
                     break;
                 case 'PHI':
                     getIrrationalPosition('PHI', number, phiStringPosition, phiStringSummedPosition);
+                    $('#phi-finder').html(number);
                     break;
                 case 'EULER':
                     getIrrationalPosition('EULER', number, eStringPosition, eStringSummedPosition);
+                    $('#euler-finder').html(number);
                     break;
                 case 'SQRT':
                     getIrrationalPosition('SQRT', number, sqrtStringPosition, sqrtStringSummedPosition);
+                    $('#sqrt-finder').html(number);
                     break;
                 case 'SQRT3':
                     getIrrationalPosition('SQRT3', number, sqrt3StringPosition, sqrt3StringSummedPosition);
+                    $('#sqrt3-finder').html(number);
                     break;
                 case 'SQRT5':
                     getIrrationalPosition('SQRT5', number, sqrt5StringPosition, sqrt5StringSummedPosition);
+                    $('#sqrt5-finder').html(number);
                     break;
                 case 'SQRT7':
                     getIrrationalPosition('SQRT7', number, sqrt7StringPosition, sqrt7StringSummedPosition);
+                    $('#sqrt7-finder').html(number);
                     break;
                 case 'LEMNI':
                     getIrrationalPosition('LEMNI', number, lemniStringPosition, lemniStringSummedPosition);
+                    $('#lemni-finder').html(number);
                     break;
                 case 'ZETA':
                     getIrrationalPosition('ZETA', number, zetaStringPosition, zetaStringSummedPosition);
+                    $('#zeta-finder').html(number);
                     break;
             }
         }
