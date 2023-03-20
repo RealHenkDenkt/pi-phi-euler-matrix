@@ -1,30 +1,29 @@
-var CenteredPentagonalManager = function () {
-    this.triangles = new Triangles();
-}
-CenteredPentagonalManager.prototype.getByNumber = function (n) {
-    return (5 * n * n - 5 * n + 2) / 2;
-}
-CenteredPentagonalManager.prototype.getIndex = function (n) {
-    // implement
-    return -1;
-}
-CenteredPentagonalManager.prototype.isValid = function (n) {
-    // inplment
+let PentagonalManager = function () {
+	
 }
 
-CenteredPentagonalManager.prototype.getCoords = function (centerX, centerY, dist) {
-    let
-        coords = [],
-        opposite,
-        adjacent,
-        angle
-    ;
+PentagonalManager.prototype.getNth = function (n) {
+	return (3 * n * n - n) / 2;
+}
 
-    // bottom left coord
-    coords.push(this.triangles.getCoordinates(centerX, centerY, dist, 54));
-    //opposite = this.triangles.getCoordinates(coords[0], coords[1], dist, 72);
-    //let x = centerX - opposite, y = centerY  - dist;
-    //coords.push([x, y]);
-    //opposite = this.triangles.getOppositeByAdjacent(dist, 72);
-    //x = x +*/
+PentagonalManager.prototype.isPentagonal = function (N) {
+	// Get positive root of
+	// equation P(n) = N.
+	let n = (1 + Math.sqrt(24*N + 1))/6;
+     
+    // Check if n is an integral
+    // value of not. To get the
+    // floor of n, type cast to int.
+    return (n - parseInt( n) == 0);
+}
+
+
+PentagonalManager.prototype.getIndex = function (n) {
+	let i, t = 0;
+	
+	for (i = 0; i <= n; i++) {
+		if (this.isPentagonal(i)) t++;
+	}
+	
+	return t;	
 }

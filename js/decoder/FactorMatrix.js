@@ -218,6 +218,8 @@ FactorMatrix.prototype.clearModalContent = function (direction) {
     this.setModalCell(element, '');
     element = '#fm'+direction+'-triangular';
     this.setModalCell(element, '');
+	element = '#fm'+direction+'-pentagonal';
+	this.setModalCell(element, '');
     element = '#fm'+direction+'-hexagonal';
     this.setModalCell(element, '');
     element = '#fm'+direction+'-tetrahedral';
@@ -306,6 +308,12 @@ FactorMatrix.prototype.setModalContent = function (number, direction) {
         element = '#fm'+direction+'-triangular';
         this.setModalCell(element, numberHandler.numberProperties.triangular);
     }
+    // Pentagonal
+    if (numberHandler.numberProperties.pentagonal !== -1) {
+        element = '#fm'+direction+'-pentagonal';
+        this.setModalCell(element, numberHandler.numberProperties.pentagonal);
+    }
+
     // Hexagonal
     if (numberHandler.numberProperties.hexagonal !== -1) {
         element = '#fm'+direction+'-hexagonal';
